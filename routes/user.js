@@ -51,9 +51,9 @@ router.get('/get-users',(req,res)=>{
 
 router.post("/set-online",(req,res)=>{
     console.log("working",req.body)
-    userHelper.setOnline(req.body).then((response)=>{
+//     userHelper.setOnline(req.body).then((response)=>{
         
-    })
+//     })
 })
 
 
