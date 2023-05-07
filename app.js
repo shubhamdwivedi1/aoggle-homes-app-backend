@@ -2,6 +2,7 @@ const express = require('express');
 const db = require('./config/connection');
 const userRoutes = require("./routes/user");
 const postRoutes = require("./routes/post");
+const adminRoutes = require("./routes/admin");
 const cors = require('cors');
 
 
@@ -16,6 +17,7 @@ app.use(cors({
 
 app.use('/api/auth', userRoutes);
 app.use('/post/video-post',postRoutes)
+app.use("/admin",adminRoutes)
 
 app.get('/', (req, res) => {
   console.log("vannade")
