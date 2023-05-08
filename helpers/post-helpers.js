@@ -34,9 +34,12 @@ module.exports = {
             try {
                 const result = await client.db(collections.DATABASE).collection(collections.POST_COLLECTION).aggregate([
                     { $match: { permission: true } },
-                    { $project: { id: { $convert: {
-            input: "$_id",
-            to: "string"
+                    { $project: { id: { $function: {
+            body: function(id) {
+              return id.toString().substr(10);
+            },
+            args: ["$_id"],
+            lang: "js"
           } } } }
                 ]).toArray()
                 const ids = result.map(doc => doc.id);
