@@ -17,6 +17,7 @@ router.post('/post-video',(req,res)=>{
 
 
 router.get('/get-posts',(req,res)=>{
+    console.log("get post working");
     postHelper.getPosts().then((response)=>{
         res.json({response});
     })
