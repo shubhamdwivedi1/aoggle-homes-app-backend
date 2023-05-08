@@ -34,7 +34,7 @@ module.exports = {
             try {
                 const result = await client.db(collections.DATABASE).collection(collections.POST_COLLECTION).aggregate([
                     { $match: { permission: true } },
-                    { $project: { id: { "$_id"} } }
+                    { $project: { id:  "$_id" } }
                 ]).toArray()
                 const ids = result.map(doc => doc.id);
                 resolve(ids)
