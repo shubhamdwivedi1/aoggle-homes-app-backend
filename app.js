@@ -16,7 +16,7 @@ app.use(cors({
 }));
 
 app.use('/api/auth', userRoutes);
-app.use('/post/video-post',postRoutes)
+app.use('/admin/post/video-post',postRoutes)
 app.use("/",adminRoutes)
 
 app.get('/admin', (req, res) => {
