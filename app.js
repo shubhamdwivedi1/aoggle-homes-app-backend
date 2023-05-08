@@ -19,9 +19,9 @@ app.use('/api/auth', userRoutes);
 app.use('/post/video-post',postRoutes)
 app.use("/admin",adminRoutes)
 
-app.get('/', (req, res) => {
+app.get('/admin', (req, res) => {
   console.log("vannade")
-    res.send('Hello World!');
+    res.json({suii:'Hello World!'});
 });
 
 app.listen(4000, () => {
