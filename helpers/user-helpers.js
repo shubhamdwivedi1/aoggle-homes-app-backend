@@ -9,7 +9,7 @@ const AWS = require('aws-sdk');
 const OTP = require('twilio')(otpConfig.accountSID, otpConfig.authToken)
 
 
-console.log(otpConfig.accountSID," ", otpConfig.authToken," ", otpConfig.serviceID)
+
 
 AWS.config.update({
     accessKeyId: 'AKIAVHMZYIHXA54VHQWX',
@@ -21,6 +21,7 @@ const s3 = new AWS.S3({ params: { Bucket: 'bucket_name' } })
 
 module.exports = {
     doSignUp: (registerData) => {
+        console.log(otpConfig.accountSID," ", otpConfig.authToken," ", otpConfig.serviceID)
         console.log("dosignup working")
         return new Promise(async (resolve, reject) => {
             const userExist = await client.db(collections.DATABASE).collection(collections.USER_COLLECTION).findOne({ mobileNumber: registerData.mobileNumber })
