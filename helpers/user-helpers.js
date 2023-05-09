@@ -8,6 +8,9 @@ const collections = require("../config/collections")
 const AWS = require('aws-sdk');
 const OTP = require('twilio')(otpConfig.accountSID, otpConfig.authToken)
 
+
+console.log(otpConfig.accountSID," ", otpConfig.authToken," ", otpConfig.serviceID)
+
 AWS.config.update({
     accessKeyId: 'AKIAVHMZYIHXA54VHQWX',
     secretAccessKey: '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'
