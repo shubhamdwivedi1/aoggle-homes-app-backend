@@ -15,6 +15,8 @@ app.use(cors({
   origin: '*'
 }));
 
+console.log("suii");
+
 app.use('/api/auth', userRoutes);
 app.use('/admin/post/video-post',postRoutes)
 app.use("/",adminRoutes)
